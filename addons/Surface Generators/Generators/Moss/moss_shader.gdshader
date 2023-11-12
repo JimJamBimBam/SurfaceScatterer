@@ -15,11 +15,16 @@ uniform float attenuation; // This is the exponent on the shell height for light
 uniform float occlusion_bias; // This is an additive constant on the ambient occlusion in order to make the lighting less harsh and maybe kind of fake in-scattering
 uniform float shell_distance_attenuation; // This is the exponent on determining how far to push the shell outwards, which biases shells downwards or upwards towards the minimum/maximum distance covered
 
-group_uniforms Physics;
+group_uniforms edge_noise;
+uniform sampler2D gradient_noise;
+uniform sampler2D edge_noise;
+
+group_uniforms physics;
 uniform float curvature; // This is the exponent on the physics displacement attenuation, a higher value controls how stiff the hair is
 uniform float displacement_strength; // The strength of the displacement (very complicated)
 uniform vec3 shell_colour: source_color; // The color of the shells (very complicated)
 uniform vec3 shell_direction; // The direction the shells are going to point towards, this is updated by the CPU each frame based on user input/movement
+
 
 global uniform vec3 HAIR_DISPLACEMENT_DIRECTION;
 
@@ -27,12 +32,14 @@ void vertex()
 {
 	//Find the height the shell should be based on its index position and the total number of shells.
 	//Value supplied by external script.
+	//==========================================//
 	float shell_height = float(shell_index) / float(shell_count);
 	shell_height = pow(shell_height, shell_distance_attenuation);
 	VERTEX.xyz += NORMAL.xyz * shell_length * shell_height;
 	
 	float k = pow(shell_height, curvature);
 	VERTEX.xyz += HAIR_DISPLACEMENT_DIRECTION * k * displacement_strength;
+	//==========================================//
 }
 
 
@@ -59,4 +66,7 @@ void fragment()
 	ambient_occulusion += occlusion_bias;
 	ambient_occulusion = clamp(ambient_occulusion, 0.0, 1.0);
 	ALBEDO = vec3(shell_colour * ambient_occulusion);
+	
+	vec4 color = texture(gradient_noise, UV);
+	ALBEDO = vec3(color.x, color.y, color.z);
 }

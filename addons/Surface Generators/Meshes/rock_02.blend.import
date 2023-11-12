@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c7n7pyc7ph72k"
-path="res://.godot/imported/rock_02.blend-a5666b40941f6378fbf65d9c0ba6bc59.scn"
+path="res://.godot/imported/rock_02.blend-e0c16827404c446e81b939fcd0d5cdf7.scn"
 
 [deps]
 
-source_file="res://addons/Meshes/rock_02.blend"
-dest_files=["res://.godot/imported/rock_02.blend-a5666b40941f6378fbf65d9c0ba6bc59.scn"]
+source_file="res://addons/Surface Generators/Meshes/rock_02.blend"
+dest_files=["res://.godot/imported/rock_02.blend-e0c16827404c446e81b939fcd0d5cdf7.scn"]
 
 [params]
 
