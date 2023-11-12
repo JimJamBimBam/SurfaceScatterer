@@ -1,0 +1,9 @@
+# Godot 4+ specific ignores
+.godot/
+
+# Plugins specific ignores
+!addons/
+Ignore/
+
+# Blender specific ignores
+*.blend1

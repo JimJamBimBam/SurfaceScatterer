@@ -1,0 +1,221 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpc67v75ahmax"]
+
+[ext_resource type="Script" path="res://addons/Surface Generators/Generators/Moss/moss_global_settings_dock.gd" id="1_urkwu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gqri"]
+bg_color = Color(0.129412, 0.14902, 0.180392, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_k83es"]
+content_margin_left = 16.0
+color = Color(0.262745, 0.298039, 0.34902, 1)
+thickness = 4
+vertical = true
+
+[node name="Moss Generator Global Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_urkwu")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="ScrollContainer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7gqri")
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Label_Settings" type="Label" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxLine_k83es")
+text = "Settings"
+
+[node name="MossColour_HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MossColour_HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Moss Colour"
+
+[node name="MossColour" type="ColorPickerButton" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MossColour_HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Moss Colour"
+
+[node name="Quality_HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Quality_HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Quality"
+
+[node name="Quality" type="SpinBox" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Quality_HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ShellLength_HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ShellLength_HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Shell Length"
+text_overrun_behavior = 1
+
+[node name="ShellLength" type="SpinBox" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ShellLength_HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Density_HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Density_HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Density"
+text_overrun_behavior = 1
+
+[node name="Density" type="SpinBox" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Density_HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MinNoise_HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MinNoise_HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Minimum Noise"
+text_overrun_behavior = 1
+
+[node name="MinNoise" type="SpinBox" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MinNoise_HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MaxNoise_HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MaxNoise_HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Maximum Noise"
+text_overrun_behavior = 1
+
+[node name="MaxNoise" type="SpinBox" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MaxNoise_HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Thickness_HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Thickness_HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Thickness"
+text_overrun_behavior = 1
+
+[node name="Thickness" type="SpinBox" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Thickness_HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Attenuation_HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Attenuation_HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Attenuation"
+text_overrun_behavior = 1
+
+[node name="Attenuation" type="SpinBox" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Attenuation_HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OcclusionBias_HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OcclusionBias_HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Occlusion Bias"
+text_overrun_behavior = 1
+
+[node name="OcclusionBias" type="SpinBox" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OcclusionBias_HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ShellDistance_HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ShellDistance_HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Shell Distance Attenuation"
+text_overrun_behavior = 1
+
+[node name="ShellDistance" type="SpinBox" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ShellDistance_HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label_Physics" type="Label" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxLine_k83es")
+text = "Physics"
+
+[node name="Stiffness_HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Stiffness_HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Stiffness"
+text_overrun_behavior = 1
+
+[node name="Stiffness" type="SpinBox" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Stiffness_HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DisplacementStrength_HBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/DisplacementStrength_HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Displacement Strength"
+text_overrun_behavior = 1
+
+[node name="DisplacementStrength" type="SpinBox" parent="ScrollContainer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/DisplacementStrength_HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3

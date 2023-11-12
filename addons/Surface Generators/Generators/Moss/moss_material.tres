@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://hnboway7i608"]
+
+[ext_resource type="Shader" path="res://addons/Surface Generators/Generators/Moss/moss_shader.gdshader" id="1_ruyxt"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ruyxt")
+shader_parameter/object_scale = Vector2(2, 2)
+shader_parameter/shell_index = null
+shader_parameter/shell_count = 32
+shader_parameter/shell_length = 0.095
+shader_parameter/density = 50.0
+shader_parameter/noise_min = null
+shader_parameter/noise_max = 0.865
+shader_parameter/thickness = 2.075
+shader_parameter/attenuation = 0.63
+shader_parameter/occlusion_bias = 0.315
+shader_parameter/shell_distance_attenuation = 0.24
+shader_parameter/curvature = 0.52
+shader_parameter/displacement_strength = 0.0
+shader_parameter/shell_colour = Color(0, 1, 0, 1)
+shader_parameter/shell_direction = null
