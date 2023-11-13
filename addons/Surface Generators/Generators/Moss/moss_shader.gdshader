@@ -3,6 +3,7 @@ render_mode cull_disabled, diffuse_toon, specular_toon;
 
 #include "res://addons/Surface Generators/Generators/shader_methods.gdshaderinc"
 
+uniform vec3 shell_colour: source_color; // The color of the shells (very complicated)
 uniform vec2 object_scale;
 uniform int shell_index; // This is the current shell layer being operated on, it ranges from 0 -> _ShellCount 
 uniform int shell_count;  // This is the total number of shells, useful for normalizing the shell index
@@ -22,7 +23,6 @@ uniform sampler2D edge_noise;
 group_uniforms physics;
 uniform float curvature; // This is the exponent on the physics displacement attenuation, a higher value controls how stiff the hair is
 uniform float displacement_strength; // The strength of the displacement (very complicated)
-uniform vec3 shell_colour: source_color; // The color of the shells (very complicated)
 uniform vec3 shell_direction; // The direction the shells are going to point towards, this is updated by the CPU each frame based on user input/movement
 
 

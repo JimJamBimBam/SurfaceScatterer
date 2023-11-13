@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cnrh3rc32n37k"]
+[gd_scene load_steps=8 format=3 uid="uid://cnrh3rc32n37k"]
 
 [ext_resource type="PackedScene" uid="uid://baa765xuxn8jw" path="res://addons/Surface Generators/Meshes/rock_00.blend" id="1_dyhux"]
 [ext_resource type="Script" path="res://addons/Surface Generators/Generators/Moss/moss_generator.gd" id="2_ffnwq"]
@@ -6,49 +6,23 @@
 [ext_resource type="Shader" path="res://addons/Surface Generators/Generators/Moss/moss_shader.gdshader" id="3_qs21b"]
 [ext_resource type="PackedScene" uid="uid://c7n7pyc7ph72k" path="res://addons/Surface Generators/Meshes/rock_02.blend" id="4_pcqo7"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8j2s5"]
-render_priority = 0
-shader = ExtResource("3_qs21b")
-shader_parameter/object_scale = null
-shader_parameter/shell_index = null
-shader_parameter/shell_count = null
-shader_parameter/shell_length = null
-shader_parameter/density = null
-shader_parameter/noise_min = null
-shader_parameter/noise_max = null
-shader_parameter/thickness = null
-shader_parameter/attenuation = null
-shader_parameter/occlusion_bias = null
-shader_parameter/shell_distance_attenuation = null
-shader_parameter/curvature = null
-shader_parameter/displacement_strength = null
-shader_parameter/shell_colour = null
-shader_parameter/shell_direction = null
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_67efx"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xu6ca"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hgjbn"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dkxp7"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="rock_00" parent="." instance=ExtResource("1_dyhux")]
 
-[node name="Moss Generator" type="Node3D" parent="rock_00"]
+[node name="Moss Generator" type="Node3D" parent="rock_00" node_paths=PackedStringArray("_shells")]
 script = ExtResource("2_ffnwq")
-_shell_colour = Color(0, 1, 1, 1)
-_density = 78.655
-_noise_max = 15.96
-_thickness = 4.21
-_attenuation = 0.975
-_occlusion_bias = 0.54
-_shell_distance_attenuation = 1.79
-moss_shader_material = SubResource("ShaderMaterial_8j2s5")
+_shells = [NodePath("mesh_shell_ 00"), NodePath("mesh_shell_ 01"), NodePath("mesh_shell_ 02"), NodePath("mesh_shell_ 03"), NodePath("mesh_shell_ 04"), NodePath("mesh_shell_ 05"), NodePath("mesh_shell_ 06"), NodePath("mesh_shell_ 07")]
 surface_shader = ExtResource("3_qs21b")
 
 [node name="rock_01" parent="." instance=ExtResource("3_jedmx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.33294, 0, 0)
 
-[node name="Moss Generator" type="Node3D" parent="rock_01"]
+[node name="Moss Generator" type="Node3D" parent="rock_01" node_paths=PackedStringArray("_shells")]
 script = ExtResource("2_ffnwq")
 _object_scale = Vector2(0, 0)
 _shell_length = 0.0
@@ -58,12 +32,13 @@ _thickness = 0.0
 _attenuation = 0.0
 _occlusion_bias = 0.0
 _shell_distance_attenuation = 0.0
-moss_shader_material = SubResource("ShaderMaterial_xu6ca")
+moss_shader_material = SubResource("ShaderMaterial_67efx")
+_shells = [NodePath("mesh_shell_ 00"), NodePath("mesh_shell_ 01"), NodePath("mesh_shell_ 02"), NodePath("mesh_shell_ 03"), NodePath("mesh_shell_ 04"), NodePath("mesh_shell_ 05"), NodePath("mesh_shell_ 06"), NodePath("mesh_shell_ 07")]
 
 [node name="rock_02" parent="." instance=ExtResource("4_pcqo7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.26018, 0, 0)
 
-[node name="Moss Generator" type="Node3D" parent="rock_02"]
+[node name="Moss Generator" type="Node3D" parent="rock_02" node_paths=PackedStringArray("_shells")]
 script = ExtResource("2_ffnwq")
 _object_scale = Vector2(0, 0)
 _shell_length = 0.0
@@ -73,6 +48,7 @@ _thickness = 0.0
 _attenuation = 0.0
 _occlusion_bias = 0.0
 _shell_distance_attenuation = 0.0
-moss_shader_material = SubResource("ShaderMaterial_hgjbn")
+moss_shader_material = SubResource("ShaderMaterial_dkxp7")
+_shells = [NodePath("mesh_shell_ 00"), NodePath("mesh_shell_ 01"), NodePath("mesh_shell_ 02"), NodePath("mesh_shell_ 03"), NodePath("mesh_shell_ 04"), NodePath("mesh_shell_ 05"), NodePath("mesh_shell_ 06"), NodePath("mesh_shell_ 07")]
 
 [editable path="rock_00"]
