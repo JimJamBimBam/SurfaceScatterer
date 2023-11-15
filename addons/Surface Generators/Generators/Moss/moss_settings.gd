@@ -30,4 +30,9 @@ func _init(init_colour: Color, init_count: int, init_length: float, init_density
 	shell_distance_attenuation = init_distance_attenuation
 	stiffness = init_stiffness
 	displacement_strength = init_displacement_strength
-	
+
+func get_class() -> String:
+	return "MossSettings"
+
+func is_class(class_to_compare: String) -> bool:
+	return class_to_compare == get_class() or super(class_to_compare)

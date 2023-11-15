@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnrh3rc32n37k"]
+[gd_scene load_steps=10 format=3 uid="uid://cnrh3rc32n37k"]
 
 [ext_resource type="PackedScene" uid="uid://baa765xuxn8jw" path="res://addons/Surface Generators/Meshes/rock_00.blend" id="1_dyhux"]
 [ext_resource type="Script" path="res://addons/Surface Generators/Generators/Moss/moss_generator.gd" id="2_ffnwq"]
 [ext_resource type="PackedScene" uid="uid://bi3tn5dl23qva" path="res://addons/Surface Generators/Meshes/rock_01.blend" id="3_jedmx"]
+[ext_resource type="Material" uid="uid://hnboway7i608" path="res://addons/Surface Generators/Generators/Moss/moss_material.tres" id="3_xeo53"]
 [ext_resource type="PackedScene" uid="uid://c7n7pyc7ph72k" path="res://addons/Surface Generators/Meshes/rock_02.blend" id="4_pcqo7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_67efx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yiqgr"]
 sky_curve = 0.0181113
@@ -26,50 +29,32 @@ reflected_light_source = 2
 
 [node name="Moss Generator" type="Node3D" parent="rock_00"]
 script = ExtResource("2_ffnwq")
-_shell_colour = Color(1, 0, 0, 1)
-_shell_length = 0.25
-_density = 500.0
-_noise_min = 1.155
-_noise_max = 1.72
-_thickness = 0.67
-_attenuation = 2.65
-_occlusion_bias = 1.0
-_shell_distance_attenuation = 4.145
-_stiffness = 1.0
-_displacement_strength = -0.04
+moss_shader_material = ExtResource("3_xeo53")
 
 [node name="rock_01" parent="." instance=ExtResource("3_jedmx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.91027, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.33294, 0, 0)
 
 [node name="Moss Generator" type="Node3D" parent="rock_01"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47955e-05, 0.0045886, -0.00105047)
 script = ExtResource("2_ffnwq")
-_shell_colour = Color(0, 1, 1, 1)
+moss_shader_material = SubResource("ShaderMaterial_67efx")
 _object_scale = Vector2(0, 0)
-_shell_length = 0.39
-_density = 500.0
-_noise_min = 0.175
-_noise_max = 1.635
-_thickness = 0.98
+_shell_length = 0.0
+_density = 0.0
+_noise_max = 0.0
+_thickness = 0.0
 _attenuation = 0.0
 _occlusion_bias = 0.0
 _shell_distance_attenuation = 0.0
 
 [node name="rock_02" parent="." instance=ExtResource("4_pcqo7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76397, -0.00768661, 0.00223446)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.26018, 0, 0)
 
 [node name="Moss Generator" type="Node3D" parent="rock_02"]
 script = ExtResource("2_ffnwq")
-_shell_length = 0.205
-_attenuation = 3.195
-_occlusion_bias = 0.255
-_shell_distance_attenuation = 1.0
-_stiffness = 2.925
-_displacement_strength = -0.56
+moss_shader_material = null
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.998661, 0, 0.0517259, 0, 1, 0, -0.0517259, 0, 0.998661, 0, 1.1135, 2.40521)
-visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_5flcp")

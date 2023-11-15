@@ -45,12 +45,12 @@ static func get_first_instance_of_type_in(type: Variant, node: Node, include_int
 
 ## Returns an Array of Nodes that contain every child, grand-child, etc.
 ## Searches only through the input "node" for children.
-static func get_all_children_in(node: Node, include_internal: bool = false) -> Array[Node]:
+static func get_all_children_in(node: Node, include_internal: bool = false) -> Array[Variant]:
 	# Input node is null
 	if node == null:
 		return []
 	
-	var nodes : Array[Node] = []
+	var nodes : Array[Variant] = []
 	for child in node.get_children(include_internal):
 		if child.get_child_count(include_internal) > 0:
 			# Append the child that has children to the end of the array.
